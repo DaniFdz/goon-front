@@ -1,21 +1,33 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import type { Item } from '@/types/collections';
-import collections from "@/data/collections.json"
-import itemsData from "@/data/items.json"
+import Layout from "@/layouts/Layout.astro";
+import type { Item } from "@/types/collections";
+import collections from "@/data/collections.json";
+import itemsData from "@/data/items.json";
+import { LayoutGrid } from "@/components/ui/layout-grid";
+import type { Card } from "@/components/ui/layout-grid";
 
 const items: Item[] = itemsData;
 
-export function getStaticPaths(){
+export function getStaticPaths() {
     return collections.map((collection) => {
-        return { params: { name: collection.name } }
-    })
+        return { params: { name: collection.name } };
+    });
 }
 
-const { name } = Astro.params
-const filteredItems = items.filter((item) => item.collection === name);
+const { name } = Astro.params;
+const filteredItems: Card[] = items
+    .filter((item) => item.collection === name)
+    .map((item, i) => {
+        return {
+            id: i,
+            className: i % 2 === 0 ? "col-span-1" : "md:col-span-2",
+            title: item.name,
+            description: item.description ?? "",
+            image: item.image,
+        };
+    });
 ---
 
 <Layout title={`GOON - ${name}`}>
-    {JSON.stringify(filteredItems)}
+    <LayoutGrid cards={filteredItems} client:idle />
 </Layout>

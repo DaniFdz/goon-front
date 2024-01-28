@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "/mnt/c/Users/Dani/Desktop/projects/goon-front",
     "moduleResolution": "node",
     "paths": {
       "@/*": [
@@ -9,6 +9,6 @@
       ]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "react"
   }
 }
