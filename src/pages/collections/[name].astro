@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { collections, items } from 'public/utils/data';
-import type { Collection, Item } from 'public/utils/data';
+import { collections, items } from '@/utils/data';
+import type { Collection, Item } from '@/utils/data';
 
 export function getStaticPaths(){
     return collections.map((collection) => {
@@ -15,4 +15,4 @@ const filteredItems = items.filter((item) => item.collection === name);
 
 <Layout title={`GOON - ${name}`}>
     {JSON.stringify(filteredItems)}
-</Layout>@/utils/datapublic/utils/datapublic/utils/data
+</Layout>@/utils/datapublic/utils/datapublic/utils/data@/utils/data@/utils/data

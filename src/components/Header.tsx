@@ -1,9 +1,8 @@
 import { useState } from "preact/compat";
 import MenuIcon from "@/components/icons/Menu";
-import LinkedInIcon from "./icons/LinkedIn";
-import InstagramIcon from "./icons/Instagram";
-import { collections } from "public/utils/data";
-import type { Collection } from "public/utils/data";
+import LinkedInIcon from "@/components/icons/LinkedIn";
+import InstagramIcon from "@/components/icons/Instagram";
+import { collections } from "@/utils/data";
 
 export default function Navbar() {
   const [collectionsOpen, setCollectionsOpen] = useState(false);
@@ -109,8 +108,6 @@ export default function Navbar() {
                   <a
                     className="text-xs font-bold leading-snug text-gray-300"
                     href={`/collections/${collection.name}`}
-                    target="_blank"
-                    rel="noreferrer"
                   >
                     {collection.name}
                   </a>
