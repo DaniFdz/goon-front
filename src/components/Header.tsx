@@ -2,7 +2,10 @@ import { useState } from "preact/compat";
 import MenuIcon from "@/components/icons/Menu";
 import LinkedInIcon from "@/components/icons/LinkedIn";
 import InstagramIcon from "@/components/icons/Instagram";
-import { collections } from "@/utils/data";
+import type { Collection } from "@/types/collections";
+import collectionsData from "@/data/collections.json"
+
+const collections: Collection[] = collectionsData;
 
 export default function Navbar() {
   const [collectionsOpen, setCollectionsOpen] = useState(false);
