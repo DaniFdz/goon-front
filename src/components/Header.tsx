@@ -1,8 +1,9 @@
 import { useState } from "preact/compat";
-import MenuIcon from "@/components/icons/Menu.tsx";
-import LinkedInIcon from "./icons/LinkedIn.tsx";
-import InstagramIcon from "./icons/Instagram.tsx";
-import { collections } from "@/utils/data.ts";
+import MenuIcon from "@/components/icons/Menu";
+import LinkedInIcon from "./icons/LinkedIn";
+import InstagramIcon from "./icons/Instagram";
+import { collections } from "public/utils/data";
+import type { Collection } from "public/utils/data";
 
 export default function Navbar() {
   const [collectionsOpen, setCollectionsOpen] = useState(false);
