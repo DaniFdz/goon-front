@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { collections, items } from "@/utils/collections"
+import { collections, items } from "@/utils/collections.ts"
 export function getStaticPaths(){
     return collections.map((collection) => {
         return { params: { name: collection.name } }

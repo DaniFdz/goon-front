@@ -1,11 +1,11 @@
-interface Item {
+export interface Item {
     name: string;
     description?: string;
     image: string;
     collection: string;
 }
 
-interface Collection {
+export interface Collection {
     name: string;
     description?: string;
 }
