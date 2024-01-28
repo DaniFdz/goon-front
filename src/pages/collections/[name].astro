@@ -1,0 +1,16 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { collections, items } from "@/utils/collections"
+export function getStaticPaths(){
+    return collections.map((collection) => {
+        return { params: { name: collection.name } }
+    })
+}
+
+const { name } = Astro.params
+const filteredItems = items.filter((item) => item.collection === name);
+---
+
+<Layout title={`GOON - ${name}`}>
+    {JSON.stringify(filteredItems)}
+</Layout>
