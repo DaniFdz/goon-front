@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "/home/dani/Desktop/projects/goon-front",
+    "baseUrl": ".",
     "moduleResolution": "node",
     "paths": {
       "@/*": [
