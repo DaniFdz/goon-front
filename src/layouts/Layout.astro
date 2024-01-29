@@ -26,9 +26,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 		<ViewTransitions/>
 	</head>
-	<body class="relative text-black dark:text-white">
-		<img src="/images/hero.webp" alt="hero" class="size-[100%] object-cover absolute top-0 left-0 -z-50">
-		<div class="w-full h-dvh absolute top-0 left-0 bg-black opacity-40 -z-49"></div>
+	<body class="relative text-black">
 		<main>
 			<Header client:idle/>
 			<slot />

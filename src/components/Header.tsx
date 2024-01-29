@@ -18,14 +18,14 @@ export default function Navbar() {
           <div className="w-full relative flex justify-between">
             <div className="flex flex-row gap-2 items-center py-3">
               <a
-                className="mr-8 text-xl font-bold tracking-[0.15em] leading-relaxed inline-block py-2 whitespace-nowrap text-white"
+                className="mr-8 text-xl font-bold tracking-[0.15em] leading-relaxed inline-block py-2 whitespace-nowrap text-black"
                 href="/"
               // style="font-family: art-nuvo, Montserrat, sans-serif"
               >
                 GOON
               </a>
               <a
-                className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-gray-300"
+                className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-gray-800"
                 href="#"
                 onMouseEnter={() => setCollectionsOpen(true)}
                 onClick={() => setCollectionsOpen(!collectionsOpen)}
@@ -34,7 +34,7 @@ export default function Navbar() {
               </a>
             </div>
             <button
-              className="text-gray-300 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none md:hidden"
+              className="text-gray-800 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none md:hidden"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
@@ -43,7 +43,7 @@ export default function Navbar() {
             <ul className="hidden md:flex flex-row items-center list-none ml-auto gap-2">
               <li className="nav-item">
                 <a
-                  className="px-2 py-1 leading-5 flex items-center text-xs gap-1 font-bold text-gray-300 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-200/30 transform transition-all duration-300"
+                  className="px-2 py-1 leading-5 flex items-center text-xs gap-1 font-bold text-gray-800 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-600/30 transform transition-all duration-300"
                   href="https://www.instagram.com/gooncouture/"
                   target="_blank"
                   rel="noreferrer"
@@ -54,7 +54,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <a
-                  className="px-2 py-1 flex items-center text-xs gap-1 font-bold leading-snug text-gray-300 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-200/30 transform transition-all duration-300"
+                  className="px-2 py-1 flex items-center text-xs gap-1 font-bold leading-snug text-gray-800 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-600/30 transform transition-all duration-300"
                   href="https://www.linkedin.com/in/laurana-corrales-aldea-64b1232aa/"
                   target="_blank"
                   rel="noreferrer"
@@ -75,7 +75,7 @@ export default function Navbar() {
             <ul className="flex flex-col list-none justify-center gap-2">
               <li className="nav-item">
                 <a
-                  className="px-2 py-1 flex items-center text-xs gap-1 font-bold leading-snug text-gray-300 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-200/30 transform transition-all duration-300"
+                  className="px-2 py-1 flex items-center text-xs gap-1 font-bold leading-snug text-gray-800 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-600/30 transform transition-all duration-300"
                   href="https://www.instagram.com/gooncouture/"
                   target="_blank"
                   rel="noreferrer"
@@ -86,7 +86,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <a
-                  className="px-2 py-1 flex items-center text-xs gap-1 font-bold leading-snug text-gray-300 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-200/30 transform transition-all duration-300"
+                  className="px-2 py-1 flex items-center text-xs gap-1 font-bold leading-snug text-gray-800 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-600/30 transform transition-all duration-300"
                   href="https://www.linkedin.com/in/laurana-corrales-aldea-64b1232aa/"
                   target="_blank"
                   rel="noreferrer"
@@ -107,9 +107,9 @@ export default function Navbar() {
             <ul className="flex flex-col list-none justify-center gap-2">
               {collections.map((collection, i) => (
 
-                <li key={i} className="nav-item px-2 py-1 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-200/30 transform transition-all duration-300">
+                <li key={i} className="nav-item px-2 py-1 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-600/30 transform transition-all duration-300">
                   <a
-                    className="text-xs font-bold leading-snug text-gray-300"
+                    className="text-xs font-bold leading-snug text-gray-800"
                     href={`/collections/${collection.name}`}
                   >
                     {collection.name}

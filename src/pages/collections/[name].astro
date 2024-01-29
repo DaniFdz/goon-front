@@ -3,8 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import type { Item } from "@/types/collections";
 import collections from "@/data/collections.json";
 import itemsData from "@/data/items.json";
-import { LayoutGrid } from "@/components/ui/layout-grid";
-import type { Card } from "@/components/ui/layout-grid";
+import LayoutGrid from "@/components/LayoutGrid";
 
 const items: Item[] = itemsData;
 
@@ -15,19 +14,10 @@ export function getStaticPaths() {
 }
 
 const { name } = Astro.params;
-const filteredItems: Card[] = items
+const filteredItems = items
     .filter((item) => item.collection === name)
-    .map((item, i) => {
-        return {
-            id: i,
-            className: i % 2 === 0 ? "col-span-1" : "md:col-span-2",
-            title: item.name,
-            description: item.description ?? "",
-            image: item.image,
-        };
-    });
 ---
 
 <Layout title={`GOON - ${name}`}>
-    <LayoutGrid cards={filteredItems} client:idle />
+    <LayoutGrid items={filteredItems} client:idle />
 </Layout>
