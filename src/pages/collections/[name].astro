@@ -19,5 +19,5 @@ const filteredItems = items
 ---
 
 <Layout title={`GOON - ${name}`}>
-    <LayoutGrid items={filteredItems} client:idle />
+    <LayoutGrid title={name} items={filteredItems} client:idle />
 </Layout>
