@@ -29,7 +29,7 @@ export default function Navbar() {
                 onMouseEnter={() => setCollectionsOpen(true)}
                 onClick={() => setCollectionsOpen(!collectionsOpen)}
               >
-                Collections
+                Portfolio
               </button>
             </div>
             <button
