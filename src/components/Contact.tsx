@@ -1,66 +1,66 @@
-import { useState } from 'react'
-import emailjs from "@emailjs/browser";
-import ContactIcon from "@/components/icons/ContactIcon"
-import LoadingIcon from '@/components/icons/LoadingIcon';
-import SendIcon from '@/components/icons/SendIcon';
+import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
+import ContactIcon from '@/components/icons/ContactIcon'
+import LoadingIcon from '@/components/icons/LoadingIcon'
+import SendIcon from '@/components/icons/SendIcon'
 
-const Contact = () => {
+const Contact = (): JSX.Element => {
   const [form, setForm] = useState({
-    from_name: "",
-    from_email: "",
-    message: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ text: "", color: "" });
+    from_name: '',
+    from_email: '',
+    message: ''
+  })
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState({ text: '', color: '' })
 
-  const handleChange = (e: any) => {
-    setForm({ ...form, [e.currentTarget.name]: e.currentTarget.value });
+  const handleChange = (e: any): void => {
+    setForm({ ...form, [e.currentTarget.name]: e.currentTarget.value })
   }
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
+  const handleSubmit = (e: any): void => {
+    e.preventDefault()
 
-    if (form.from_name === "") {
-      setMessage({ text: "Por favor, proporciona un nombre para que me pueda dirigir hacia ti.", color: "text-red-500" });
-      return;
+    if (form.from_name === '') {
+      setMessage({ text: 'Por favor, proporciona un nombre para que me pueda dirigir hacia ti.', color: 'text-red-500' })
+      return
     }
 
-    if (form.from_email === "") {
-      setMessage({ text: "Por favor, proporciona un correo electrónico para que me pueda dirigir hacia ti.", color: "text-red-500" });
-      return;
+    if (form.from_email === '') {
+      setMessage({ text: 'Por favor, proporciona un correo electrónico para que me pueda dirigir hacia ti.', color: 'text-red-500' })
+      return
     }
 
-    if (form.message === "") {
-      setMessage({ text: "Por favor, introduce un mensaje.", color: "text-red-500" });
-      return;
+    if (form.message === '') {
+      setMessage({ text: 'Por favor, introduce un mensaje.', color: 'text-red-500' })
+      return
     }
 
-    setLoading(true);
+    setLoading(true)
 
     emailjs
       .send(
-        import.meta.env.PUBLIC_VITE_EMAIL_SERVICE_ID??"",
-        import.meta.env.PUBLIC_VITE_EMAIL_TEMPLATE_ID??"",
+        import.meta.env.PUBLIC_VITE_EMAIL_SERVICE_ID as string ?? '',
+        import.meta.env.PUBLIC_VITE_EMAIL_TEMPLATE_ID as string ?? '',
         form,
-        import.meta.env.PUBLIC_VITE_EMAIL_PUBLIC_KEY??""
+        import.meta.env.PUBLIC_VITE_EMAIL_PUBLIC_KEY as string ?? ''
       )
       .then(
         () => {
-          setLoading(false);
-          setMessage({ text: "Gracias por contactar conmigo, te responderé tan pronto como pueda.", color: "text-green-500" });
+          setLoading(false)
+          setMessage({ text: 'Gracias por contactar conmigo, te responderé tan pronto como pueda.', color: 'text-green-500' })
 
           // Clear the success message after 5 seconds
           setTimeout(() => {
-            setMessage({ text: "", color: "" });
-          }, 5000);
+            setMessage({ text: '', color: '' })
+          }, 5000)
         },
         (error: any) => {
-          setLoading(false);
-          console.error(error);
-          setMessage({ text: "Ouch, algo no ha funcionado como debería, por favor prueba de nuevo.", color: "text-red-500" });
+          setLoading(false)
+          console.error(error)
+          setMessage({ text: 'Ouch, algo no ha funcionado como debería, por favor prueba de nuevo.', color: 'text-red-500' })
         }
-      );
-  };
+      )
+  }
 
   return <div
     className="flex flex-col items-left px-4 py-3 rounded-lg bg-white bg-[radial-gradient(#e5e7eb_1px,#f3f6ff_1px)] bg-[size:30px_30px]"
@@ -115,11 +115,10 @@ const Contact = () => {
       </div>
     </form>
 
-    {message.text && (
+    {(message.text.length > 0) && (
       <div className={`${message.color} font-semibold text-center mt-4`}>{message.text}</div>
     )}
   </div>
-
 }
 
-export default Contact;
+export default Contact

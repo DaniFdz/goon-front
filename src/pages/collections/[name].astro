@@ -14,10 +14,11 @@ export function getStaticPaths() {
 }
 
 const { name } = Astro.params;
+const description = collections.find((collection) => collection.name === name)?.description || "";
 const filteredItems = items
     .filter((item) => item.collection === name)
 ---
 
 <Layout title={`GOON - ${name}`}>
-    <LayoutGrid title={name} items={filteredItems} client:idle />
+    <LayoutGrid title={name} items={filteredItems} description={description} client:idle />
 </Layout>

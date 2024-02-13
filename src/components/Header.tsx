@@ -1,15 +1,15 @@
-import { useState } from "react";
-import MenuIcon from "@/components/icons/Menu";
-import LinkedInIcon from "@/components/icons/LinkedIn";
-import InstagramIcon from "@/components/icons/Instagram";
-import type { Collection } from "@/types/collections";
-import collectionsData from "@/data/collections.json"
+import React, { useState } from 'react'
+import MenuIcon from '@/components/icons/Menu'
+import LinkedInIcon from '@/components/icons/LinkedIn'
+import InstagramIcon from '@/components/icons/Instagram'
+import type { Collection } from '@/types/collections'
+import collectionsData from '@/data/collections.json'
 
-const collections: Collection[] = collectionsData;
+const collections: Collection[] = collectionsData
 
-export default function Navbar() {
-  const [collectionsOpen, setCollectionsOpen] = useState(false);
-  const [navbarOpen, setNavbarOpen] = useState(false);
+export default function Navbar (): JSX.Element {
+  const [collectionsOpen, setCollectionsOpen] = useState(false)
+  const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
     <>
@@ -26,8 +26,8 @@ export default function Navbar() {
               </a>
               <button
                 className="text-sm font-bold leading-relaxed inline-block py-2 whitespace-nowrap text-gray-800"
-                onMouseEnter={() => setCollectionsOpen(true)}
-                onClick={() => setCollectionsOpen(!collectionsOpen)}
+                onMouseEnter={() => { setCollectionsOpen(true) }}
+                onClick={() => { setCollectionsOpen(!collectionsOpen) }}
               >
                 Portfolio
               </button>
@@ -41,7 +41,7 @@ export default function Navbar() {
             <button
               className="text-gray-800 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none md:hidden"
               type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
+              onClick={() => { setNavbarOpen(!navbarOpen) }}
               name="navbarOpen"
             >
               <MenuIcon />
@@ -73,8 +73,8 @@ export default function Navbar() {
           </div>
           <div
             className={
-              "flex-grow items-center md:hidden" +
-              (navbarOpen ? " flex" : " hidden")
+              'flex-grow items-center md:hidden' +
+              (navbarOpen ? ' flex' : ' hidden')
             }
             id="example-navbar-danger"
           >
@@ -104,11 +104,11 @@ export default function Navbar() {
             </ul>
           </div>
           <div
-            className={"mx-24 flex-grow items-center" +
-              (collectionsOpen ? " flex" : " hidden")
+            className={'mx-24 flex-grow items-center' +
+              (collectionsOpen ? ' flex' : ' hidden')
             }
             id="example-navbar-danger"
-            onMouseLeave={() => setCollectionsOpen(false)}
+            onMouseLeave={() => { setCollectionsOpen(false) }}
           >
             <ul className="flex flex-col list-none justify-center gap-2">
               {collections.map((collection, i) => (
@@ -127,5 +127,5 @@ export default function Navbar() {
         </div>
       </nav>
     </>
-  );
+  )
 }
