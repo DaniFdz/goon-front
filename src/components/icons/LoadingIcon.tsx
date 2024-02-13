@@ -1,4 +1,5 @@
-const LoadingIcon = () => (
+import React from 'react'
+const LoadingIcon = (): JSX.Element => (
 
     <div role="status" className='flex justify-center align-center gap-2'>
         <svg aria-hidden="true" className="w-5 h-5  animate-spin text-gray-200 fill-blue-400" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -7,5 +8,5 @@ const LoadingIcon = () => (
         </svg>
         <p>Sending...</p>
     </div>
-);
-export default LoadingIcon;
+)
+export default LoadingIcon
