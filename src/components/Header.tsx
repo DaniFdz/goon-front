@@ -42,6 +42,7 @@ export default function Navbar() {
               className="text-gray-800 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none md:hidden"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
+              name="navbarOpen"
             >
               <MenuIcon />
             </button>
