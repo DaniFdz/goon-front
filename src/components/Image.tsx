@@ -43,7 +43,7 @@ export default function ImageComponent ({ item, id }: ImageProps): JSX.Element {
                 <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full rounded-lg"
+                    className="w-full h-full rounded-lg shadow-lg"
                 />
             </div>
 
@@ -52,7 +52,7 @@ export default function ImageComponent ({ item, id }: ImageProps): JSX.Element {
                     id={`img-${id}`}
                     src={item.image}
                     alt={item.name}
-                    className="inset-0 w-11/12 max-h-max h-max md:[height:60dvh] md:max-w-max md:w-max rounded-lg z-9 group-hover:scale-110 group-hover:object-fill group-hover:blur-sm transition-all duration-300 ease-in-out"
+                    className="inset-0 w-11/12 max-h-max h-max md:[height:60dvh] md:max-w-max md:w-max rounded-lg z-9 group-hover:scale-110 group-hover:object-fill group-hover:blur-sm transition-all duration-300 ease-in-out shadow-lg"
                     onLoad={handleResize}
                 />
                 <span

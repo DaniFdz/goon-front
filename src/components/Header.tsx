@@ -5,18 +5,24 @@ import InstagramIcon from '@/components/icons/Instagram'
 import type { Collection } from '@/types/collections'
 import collectionsData from '@/data/collections.json'
 
+interface Props {
+  bg: boolean
+}
+
 const collections: Collection[] = collectionsData
 
-export default function Navbar (): JSX.Element {
+export default function Navbar ({ bg }: Props): JSX.Element {
   const [collectionsOpen, setCollectionsOpen] = useState(false)
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
     <>
-      <nav className="absolute top-0 left-0 z-50 w-dvw flex flex-wrap items-center justify-between backdrop-blur-sm mb-3">
+      <nav className={`absolute top-0 left-0 z-50 w-dvw flex flex-wrap items-center justify-between mb-3 ${
+        bg ? 'bg-white' : 'backdrop-blur-sm'
+      }`} >
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between">
-            <div className="flex flex-row gap-4 items-center py-3">
+            <div className="flex flex-row gap-4 items-center pt-2 pb-1">
               <a
                 className="mr-4 text-xl font-bold tracking-[0.15em] leading-relaxed inline-block py-2 whitespace-nowrap text-black"
                 href="/"
@@ -113,7 +119,7 @@ export default function Navbar (): JSX.Element {
             <ul className="flex flex-col list-none justify-center gap-2">
               {collections.map((collection, i) => (
 
-                <li key={i} className="nav-item px-2 py-1 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-600/30 transform transition-all duration-300">
+                <li key={i} className="nav-item px-2 rounded-full hover:opacity-75 hover:scale-110 hover:bg-gray-600/30 transform transition-all duration-300">
                   <a
                     className="text-xs font-bold leading-snug text-gray-800"
                     href={`/collections/${collection.name}`}

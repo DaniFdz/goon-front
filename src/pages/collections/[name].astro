@@ -19,6 +19,6 @@ const filteredItems = items
     .filter((item) => item.collection === name)
 ---
 
-<Layout title={`GOON - ${name}`}>
+<Layout title={`GOON - ${name}`} bg={true}>
     <LayoutGrid title={name} items={filteredItems} description={description} client:idle />
 </Layout>
