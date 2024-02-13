@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import Contact from "@/components/Contact"
+import ContactForm from "@/components/Contact"
 ---
 
 <Layout title="GOON - Contact">
@@ -9,7 +9,7 @@ import Contact from "@/components/Contact"
 	<div class="w-full h-dvh">
 		<div class="w-full h-dvh absolute top-0 left-0 flex flex-col justify-center items-center gap-0">
 			<div style="width: min(512px, 80vw)">
-				<Contact client:load/>
+				<ContactForm client:load/>
 			</div>
 		</div>
 	</div>

@@ -47,7 +47,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          setMessage({ text: "Thank you. I will get back to you as soon as possible.", color: "text-green-500" });
+          setMessage({ text: "Gracias por contactar conmigo, te responderé tan pronto como pueda.", color: "text-green-500" });
 
           // Clear the success message after 5 seconds
           setTimeout(() => {
