@@ -108,7 +108,7 @@ const Contact = () => {
       <div className="flex items-center justify-center">
         <button
           type="submit"
-          className="flex items-center justify-center  py-3.5 px-14 rounded-full outline-none w-fit gap-1 text-white font-semibold bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br  shadow-sm  shadow-blue-800/80"
+          className="flex items-center justify-center  py-3.5 px-14 rounded-full outline-none w-fit gap-1 text-white font-semibold bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 hover:bg-gradient-to-br  shadow-sm  shadow-teal-800/80"
         >
           {loading ? <LoadingIcon /> : (<>Enviar<SendIcon /></>)}
         </button>
