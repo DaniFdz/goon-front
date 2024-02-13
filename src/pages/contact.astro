@@ -1,0 +1,16 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Contact from "@/components/Contact"
+---
+
+<Layout title="GOON - Contact">
+	<img src="/images/hero.webp" alt="hero" class="size-[100%] object-cover absolute top-0 left-0 -z-50">
+	<div class="w-full h-dvh absolute top-0 left-0 bg-black opacity-40 -z-49"></div>
+	<div class="w-full h-dvh">
+		<div class="w-full h-dvh absolute top-0 left-0 flex flex-col justify-center items-center gap-0">
+			<div style="width: min(512px, 80vw)">
+				<Contact client:load/>
+			</div>
+		</div>
+	</div>
+</Layout>

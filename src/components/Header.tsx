@@ -16,21 +16,27 @@ export default function Navbar() {
       <nav className="absolute top-0 left-0 z-50 w-dvw flex flex-wrap items-center justify-between backdrop-blur-sm mb-3">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between">
-            <div className="flex flex-row gap-2 items-center py-3">
+            <div className="flex flex-row gap-4 items-center py-3">
               <a
-                className="mr-8 text-xl font-bold tracking-[0.15em] leading-relaxed inline-block py-2 whitespace-nowrap text-black"
+                className="mr-4 text-xl font-bold tracking-[0.15em] leading-relaxed inline-block py-2 whitespace-nowrap text-black"
                 href="/"
               // style="font-family: art-nuvo, Montserrat, sans-serif"
               >
                 GOON
               </a>
               <button
-                className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-gray-800"
+                className="text-sm font-bold leading-relaxed inline-block py-2 whitespace-nowrap text-gray-800"
                 onMouseEnter={() => setCollectionsOpen(true)}
                 onClick={() => setCollectionsOpen(!collectionsOpen)}
               >
                 Portfolio
               </button>
+              <a
+                className="text-sm font-bold leading-relaxed inline-block py-2 whitespace-nowrap text-gray-800"
+                href="/contact"
+              >
+                Contacto
+              </a>
             </div>
             <button
               className="text-gray-800 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none md:hidden"
