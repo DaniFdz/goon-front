@@ -56,7 +56,7 @@ export default function ImageComponent ({ item, id }: ImageProps): JSX.Element {
                     onLoad={handleResize}
                 />
                 <span
-                    className="absolute inset-0 rounded-lg z-10 bg-black opacity-0 group-hover:opacity-40 group-hover:scale-110 transition-all duration-300 ease-in-out flex flex-col justify-around items-start"
+                    className="absolute inset-0 rounded-lg z-10 bg-black opacity-0 group-hover:opacity-60 group-hover:scale-110 transition-all duration-300 ease-in-out flex flex-col justify-around items-start"
                     style={{ width: `${size.width}px`, height: `${size.height}px` }}
                 ></span>
                 <div className="absolute px-3 py-2 inset-0 rounded-lg z-10  opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 ease-in-out flex flex-col justify-around items-center ">
